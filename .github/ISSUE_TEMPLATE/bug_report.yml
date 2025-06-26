@@ -1,0 +1,241 @@
+name: 🐛 Bug Report
+description: Report a problem with Simple Wake-on-LAN
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees: ["ColDog5044"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug! Please fill out the information below to help us reproduce and fix the issue.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 🐛 Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the bug...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 🔄 Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Enter values '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: ✅ Expected Behavior
+      description: A clear and concise description of what you expected to happen
+      placeholder: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: ❌ Actual Behavior
+      description: A clear and concise description of what actually happened
+      placeholder: What actually happened?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: 💻 Operating System
+      description: What operating system are you using?
+      options:
+        - Windows 10
+        - Windows 11
+        - Ubuntu/Debian
+        - Fedora/RHEL
+        - Arch Linux
+        - Other Linux
+        - macOS
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: os-other
+    attributes:
+      label: Other OS Details
+      description: If you selected "Other" above, please specify
+      placeholder: e.g., Linux Mint, openSUSE, FreeBSD
+
+  - type: input
+    id: app-version
+    attributes:
+      label: 📱 Application Version
+      description: What version of Simple Wake-on-LAN are you using?
+      placeholder: e.g., v1.0.0, latest from main branch
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installation-method
+    attributes:
+      label: 📦 Installation Method
+      description: How did you install Simple Wake-on-LAN?
+      options:
+        - Standalone executable (Windows .exe)
+        - Standalone executable (Linux binary)
+        - Python source (pip install)
+        - Built from source (git clone)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: 🐍 Python Version
+      description: If running from source, what Python version? (Skip if using executable)
+      placeholder: e.g., 3.11.0
+
+  - type: dropdown
+    id: target-device-type
+    attributes:
+      label: 🖥️ Target Device Type
+      description: What type of device are you trying to wake up?
+      options:
+        - Desktop PC
+        - Laptop
+        - Server
+        - NAS (Network Attached Storage)
+        - Gaming Console
+        - IoT Device
+        - Other
+        - Unknown
+
+  - type: input
+    id: target-device-os
+    attributes:
+      label: Target Device OS
+      description: What operating system is the target device running?
+      placeholder: e.g., Windows 11, Ubuntu 22.04, FreeNAS
+
+  - type: dropdown
+    id: wol-support-confirmed
+    attributes:
+      label: 🌐 Wake-on-LAN Support
+      description: Has Wake-on-LAN been confirmed working with other tools?
+      options:
+        - "Yes - Works with other WoL tools"
+        - "No - Doesn't work with other tools either"
+        - "Not tested with other tools"
+        - "Unknown/Unsure"
+
+  - type: dropdown
+    id: same-subnet
+    attributes:
+      label: 🔗 Network Subnet
+      description: Are the devices on the same network subnet?
+      options:
+        - "Yes - Same subnet"
+        - "No - Different subnets"
+        - "Unknown"
+
+  - type: input
+    id: mac-address-format
+    attributes:
+      label: 🏷️ MAC Address Format
+      description: What format is your MAC address in? (Redact actual values for privacy)
+      placeholder: e.g., AA:BB:CC:DD:EE:FF, AA-BB-CC-DD-EE-FF, AABBCCDDEEFF
+
+  - type: dropdown
+    id: target-type
+    attributes:
+      label: 🎯 Target Type
+      description: How are you targeting the device?
+      options:
+        - Specific IP address
+        - Broadcast (255.255.255.255)
+        - Subnet broadcast
+        - Other
+
+  - type: input
+    id: wol-port
+    attributes:
+      label: 🔌 Wake-on-LAN Port
+      description: What port are you using for Wake-on-LAN?
+      placeholder: e.g., 9 (default), 7, 0, custom port
+      value: "9"
+
+  - type: checkboxes
+    id: firewall-config
+    attributes:
+      label: 🛡️ Firewall Configuration
+      description: What firewalls might be affecting the connection?
+      options:
+        - label: Windows Firewall
+        - label: Linux iptables/firewalld
+        - label: Router/Gateway firewall
+        - label: Corporate/Enterprise firewall
+        - label: No firewall configured
+        - label: Firewall disabled for testing
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: 🚨 Error Messages
+      description: If applicable, paste any error messages you received
+      render: text
+      placeholder: Paste error messages here...
+
+  - type: textarea
+    id: log-files
+    attributes:
+      label: 📋 Log Files
+      description: If available, attach or paste relevant log output
+      render: text
+      placeholder: Paste log output here...
+
+  - type: checkboxes
+    id: attempted-solutions
+    attributes:
+      label: 🔧 Attempted Solutions
+      description: What have you already tried to fix this issue?
+      options:
+        - label: Restarted the application
+        - label: Verified device MAC address is correct
+        - label: Tested with different ports (7, 9, 0)
+        - label: Checked network connectivity (ping, etc.)
+        - label: Verified Wake-on-LAN settings on target device
+        - label: Tested with broadcast vs specific IP
+        - label: Temporarily disabled firewalls
+        - label: Tried from a different computer
+        - label: Used other Wake-on-LAN tools successfully
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📝 Additional Context
+      description: Add any other context about the problem here
+      placeholder: Network diagrams, router models, special configurations, etc.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues
+          required: true
+        - label: I have provided all requested information
+          required: true
+        - label: I have tested with the latest version
+          required: true
+        - label: I understand this is an open source project maintained by volunteers
+          required: true

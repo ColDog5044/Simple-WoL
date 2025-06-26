@@ -184,6 +184,83 @@ The application is built with:
 - **WoL**: wakeonlan library for sending magic packets
 - **Configuration**: JSON for device storage
 
+## Project Structure
+
+The application is built with a modular architecture for maintainability and future development:
+
+```
+Simple-WoL/
+├── src/simple_wol/          # Main application package
+│   ├── __init__.py         # Package initialization
+│   ├── __main__.py         # Entry point
+│   ├── app.py              # Main application class
+│   ├── device.py           # Device data model
+│   ├── config/             # Configuration management
+│   │   ├── __init__.py
+│   │   └── manager.py      # ConfigManager class
+│   ├── ui/                 # User interface components
+│   │   ├── __init__.py
+│   │   ├── main_window.py  # Main window UI
+│   │   ├── device_dialog.py # Add/edit device dialog
+│   │   └── tooltip.py      # Tooltip components
+│   └── network/            # Network functionality
+│       ├── __init__.py
+│       └── wol.py          # Wake-on-LAN operations
+├── assets/                 # Icon and resource files
+├── build/                  # Build scripts and specifications
+├── dist/                   # Built executables (after building)
+├── tests/                  # Unit tests
+├── docs/                   # Documentation
+├── run_modular.py          # Run script for modular version
+├── run_modular.bat         # Windows run script
+├── run_modular.sh          # Linux run script
+├── build.bat               # Windows build script
+├── build.sh                # Linux build script
+├── dev.py                  # Development task runner
+├── requirements.txt        # Runtime dependencies
+├── requirements-build.txt  # Build dependencies
+├── setup.py                # Setup script
+├── pyproject.toml          # Modern Python packaging
+└── README.md               # This file
+```
+
+## Running the Application
+
+### Development Mode
+
+Run the modular version directly:
+
+**Windows:**
+```cmd
+run_modular.bat
+```
+
+**Linux/macOS:**
+```bash
+./run_modular.sh
+```
+
+**Or manually:**
+```bash
+python run_modular.py
+```
+
+### Building Standalone Executables
+
+Create a standalone executable that doesn't require Python to be installed:
+
+**Windows:**
+```cmd
+build.bat
+```
+
+**Linux/macOS:**
+```bash
+./build.sh
+```
+
+The built executable will be created in the `dist/` directory.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

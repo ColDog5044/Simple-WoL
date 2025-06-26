@@ -1,0 +1,197 @@
+name: ✨ Feature Request
+description: Suggest an enhancement or new feature for Simple Wake-on-LAN
+title: "[FEATURE] "
+labels: ["enhancement", "needs-triage"]
+assignees: ["ColDog5044"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please provide as much detail as possible to help us understand your request.
+
+  - type: textarea
+    id: feature-summary
+    attributes:
+      label: ✨ Feature Summary
+      description: A clear and concise description of the feature you'd like to see added
+      placeholder: Briefly describe the feature you want...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-use-case
+    attributes:
+      label: 🎯 Problem or Use Case
+      description: Describe the problem this feature would solve or the use case it would address
+      placeholder: |
+        I'm always frustrated when...
+        It would be helpful if...
+        Currently I have to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: 💡 Proposed Solution
+      description: Describe the solution you'd like to see implemented
+      placeholder: I think the application should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternative-solutions
+    attributes:
+      label: 🔄 Alternative Solutions
+      description: Describe any alternative solutions or features you've considered
+      placeholder: Instead of the above, we could also...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 🚨 Priority
+      description: How important is this feature to you?
+      options:
+        - Critical - I can't use the application effectively without this
+        - High - This would significantly improve my workflow
+        - Medium - This would be nice to have
+        - Low - Just an idea for the future
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: target-users
+    attributes:
+      label: 👥 Target Users
+      description: Who would benefit from this feature?
+      options:
+        - label: All users
+        - label: Power users / Advanced users
+        - label: Network administrators
+        - label: Home users
+        - label: Enterprise users
+        - label: Developers/IT professionals
+        - label: First-time users
+
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: 📂 Feature Category
+      description: What category does this feature fall into?
+      options:
+        - User Interface / Experience
+        - Network Functionality
+        - Device Management
+        - Configuration / Settings
+        - Automation / Scripting
+        - Security / Privacy
+        - Performance / Optimization
+        - Import / Export
+        - Logging / Debugging
+        - Cross-platform Compatibility
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: ui-mockup
+    attributes:
+      label: 🎨 User Interface Ideas
+      description: If this affects the UI, describe or sketch how it might look
+      placeholder: |
+        The new feature could be accessed by...
+        It might look like...
+        The workflow would be...
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: 🔧 Implementation Ideas
+      description: If you have ideas about how this could be implemented, share them here
+      placeholder: |
+        This could be implemented by...
+        Similar to how [other software] does it...
+        Could use [technology/library]...
+
+  - type: textarea
+    id: related-features
+    attributes:
+      label: 🔗 Related Features
+      description: Are there any existing features this would work with or enhance?
+      placeholder: |
+        This would work well with...
+        This would enhance the existing...
+        This is similar to the current...
+
+  - type: checkboxes
+    id: complexity-estimate
+    attributes:
+      label: ⚡ Complexity Estimate
+      description: How complex do you think this feature would be to implement?
+      options:
+        - label: Simple - Minor UI change or small addition
+        - label: Medium - New functionality but using existing patterns
+        - label: Complex - Major new feature or significant changes
+        - label: I'm not sure about the complexity
+
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: 🖥️ Target Platforms
+      description: Which platforms should this feature work on?
+      options:
+        - label: Windows
+        - label: Linux
+        - label: macOS
+        - label: All platforms
+        - label: Platform-specific is okay
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: ✅ Acceptance Criteria
+      description: What would need to be true for this feature to be considered complete?
+      placeholder: |
+        - [ ] The feature should...
+        - [ ] Users should be able to...
+        - [ ] The feature should work with...
+        - [ ] Documentation should be updated...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📝 Additional Context
+      description: Add any other context, mockups, links, or examples about the feature request
+      placeholder: |
+        Links to similar features in other software...
+        Screenshots or mockups...
+        Related documentation...
+
+  - type: checkboxes
+    id: research
+    attributes:
+      label: 🔍 Research
+      description: Have you researched this feature?
+      options:
+        - label: I've looked for similar features in other Wake-on-LAN tools
+        - label: I've checked if this functionality exists elsewhere in the app
+        - label: I've considered potential technical challenges
+        - label: I've thought about how this fits with the app's current design
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues and feature requests
+          required: true
+        - label: This feature aligns with the project's scope (Wake-on-LAN functionality)
+          required: true
+        - label: I have provided clear description and use case
+          required: true
+        - label: I understand this is a request, not a guarantee
+          required: true
+        - label: I understand this is an open source project maintained by volunteers
+          required: true

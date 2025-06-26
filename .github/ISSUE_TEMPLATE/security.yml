@@ -1,0 +1,149 @@
+name: 🔒 Security Vulnerability Report
+description: Report a security vulnerability (please use responsibly)
+title: "[SECURITY] "
+labels: ["security", "vulnerability", "needs-triage"]
+assignees: ["ColDog5044"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ Security Vulnerability Report
+        
+        Thank you for helping keep Simple Wake-on-LAN secure! Please provide details about the security issue you've discovered.
+        
+        **Important:** If this is a critical security vulnerability, please consider reporting it privately by emailing the maintainer directly rather than creating a public issue.
+
+  - type: checkboxes
+    id: severity
+    attributes:
+      label: 🚨 Severity Level
+      description: How severe do you consider this vulnerability?
+      options:
+        - label: Critical - Remote code execution, privilege escalation
+        - label: High - Data exposure, authentication bypass
+        - label: Medium - Information disclosure, minor privilege issues
+        - label: Low - Minor security concerns
+
+  - type: textarea
+    id: vulnerability-summary
+    attributes:
+      label: 🔍 Vulnerability Summary
+      description: Brief description of the security issue
+      placeholder: A vulnerability exists that allows...
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-details
+    attributes:
+      label: 🔧 Technical Details
+      description: Detailed technical explanation of the vulnerability
+      placeholder: |
+        The vulnerability occurs when...
+        The affected code is in...
+        The issue is caused by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 🔄 Steps to Reproduce
+      description: Step-by-step instructions to reproduce the vulnerability
+      placeholder: |
+        1. Set up the application with...
+        2. Navigate to...
+        3. Perform action...
+        4. Observe security issue...
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: 💥 Impact
+      description: What could an attacker achieve by exploiting this vulnerability?
+      placeholder: |
+        An attacker could...
+        This could lead to...
+        The potential impact includes...
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-versions
+    attributes:
+      label: 📦 Affected Versions
+      description: Which versions of the application are affected?
+      placeholder: All versions, v1.0.0 and later, etc.
+
+  - type: textarea
+    id: proof-of-concept
+    attributes:
+      label: 🧪 Proof of Concept
+      description: Code, commands, or screenshots demonstrating the vulnerability (be responsible - don't include working exploits)
+      render: text
+      placeholder: |
+        # Example command or code snippet
+        # (sanitized to not provide working exploit)
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: 🔧 Suggested Fix
+      description: If you have ideas for how to fix this vulnerability, please share them
+      placeholder: |
+        This could be fixed by...
+        Consider implementing...
+        A potential solution is...
+
+  - type: dropdown
+    id: disclosure-timeline
+    attributes:
+      label: ⏰ Disclosure Timeline
+      description: What timeline are you expecting for this disclosure?
+      options:
+        - Immediate public disclosure (low severity)
+        - 30 days for fix development
+        - 60 days for fix development  
+        - 90 days for fix development
+        - Coordinated disclosure (we can discuss timeline)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: researcher-info
+    attributes:
+      label: 👤 Researcher Information
+      description: Information about you (optional but helpful for credit)
+      options:
+        - label: I would like to be credited for this discovery
+        - label: I am affiliated with a security research organization
+        - label: I am reporting this as part of a bug bounty program
+        - label: I prefer to remain anonymous
+
+  - type: textarea
+    id: contact-info
+    attributes:
+      label: 📧 Contact Information
+      description: How can we reach you for follow-up? (optional but recommended)
+      placeholder: |
+        Email: (for private communication)
+        GitHub: @username
+        Other: 
+
+  - type: checkboxes
+    id: responsible-disclosure
+    attributes:
+      label: ✅ Responsible Disclosure Agreement
+      description: Please confirm your commitment to responsible disclosure
+      options:
+        - label: I will not publicly disclose full details until a fix is available
+          required: true
+        - label: I will not use this vulnerability for malicious purposes
+          required: true
+        - label: I understand this is an open source project maintained by volunteers
+          required: true
+        - label: I have not shared full exploit details with others
+          required: true

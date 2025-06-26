@@ -1,0 +1,51 @@
+name: "Simple Wake-on-LAN CodeQL Configuration"
+
+# CodeQL configuration for enhanced security analysis
+disable-default-queries: false
+
+queries:
+  - name: security-and-quality
+    uses: security-and-quality
+  - name: security-extended
+    uses: security-extended
+
+# Paths to include in analysis
+paths:
+  - src/
+  - run_modular.py
+  - dev.py
+  - setup.py
+
+# Paths to exclude from analysis
+paths-ignore:
+  - tests/
+  - build/
+  - dist/
+  - docs/
+  - .git/
+  - __pycache__/
+  - "**/*.pyc"
+  - "**/*.pyo"
+
+# Query filters
+query-filters:
+  - exclude:
+      id: py/unused-import
+      reason: "Development imports may appear unused"
+  - exclude:
+      id: py/similar-function
+      reason: "UI code may have similar patterns"
+
+# Language-specific configuration
+languages:
+  python:
+    # Python-specific analysis options
+    extractor:
+      python:
+        setup_py_command: "python setup.py build_ext --inplace"
+    
+    # Additional libraries to analyze
+    library-path-dependencies: true
+    
+    # Include test files for vulnerability analysis
+    include-test-files: false

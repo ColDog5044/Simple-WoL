@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Desktop Computer",
+    "mac_address": "AA:BB:CC:DD:EE:FF",
+    "ip_address": "192.168.1.100",
+    "port": 9
+  },
+  {
+    "name": "Home Server",
+    "mac_address": "11:22:33:44:55:66",
+    "ip_address": "",
+    "port": 9
+  },
+  {
+    "name": "Media Center",
+    "mac_address": "FF-EE-DD-CC-BB-AA",
+    "ip_address": "192.168.1.150",
+    "port": 7
+  }
+]

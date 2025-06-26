@@ -1,0 +1,87 @@
+name: ❓ Question / Help
+description: Ask for help or clarification about using Simple Wake-on-LAN
+title: "[QUESTION] "
+labels: ["question", "help wanted"]
+assignees: ["ColDog5044"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for using Simple Wake-on-LAN! Please provide details about what you need help with.
+        
+        **Note:** For general discussions, consider using [GitHub Discussions](https://github.com/ColDog5044/Simple-WoL/discussions) instead.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: ❓ Your Question
+      description: What do you need help with?
+      placeholder: I'm trying to... but I'm not sure how to...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: question-category
+    attributes:
+      label: 📂 Question Category
+      description: What type of help do you need?
+      options:
+        - Setup / Installation
+        - Configuration / Settings
+        - Network Troubleshooting  
+        - Device Not Waking Up
+        - Feature Usage / How-to
+        - Error Understanding
+        - Best Practices
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: 🔍 What Have You Tried?
+      description: What steps have you already taken to solve this?
+      placeholder: |
+        I've tried...
+        I've read...
+        I've checked...
+
+  - type: textarea
+    id: current-setup
+    attributes:
+      label: 🖥️ Current Setup
+      description: Tell us about your environment
+      placeholder: |
+        - Operating System: 
+        - Application Version: 
+        - Network setup: 
+        - Target device:
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: 🎯 Expected Outcome
+      description: What are you trying to achieve?
+      placeholder: I want to be able to...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: documentation-checked
+    attributes:
+      label: 📖 Documentation
+      description: Have you checked the available documentation?
+      options:
+        - label: I've read the README.md file
+        - label: I've checked the troubleshooting section
+        - label: I've looked at the example configuration
+        - label: I've searched existing issues
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📝 Additional Context
+      description: Any other information that might be helpful
+      placeholder: Screenshots, error messages, network diagrams, etc.

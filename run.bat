@@ -1,3 +1,0 @@
-@echo off
-echo Starting Simple Wake-on-LAN...
-py simple_wol.py
